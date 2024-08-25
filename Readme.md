@@ -46,18 +46,30 @@ There are four main access modifiers.
   ```bash
         class Account{
           private double balance;
+          private String name;
+          private double id;
 
-          public Account(double balance){
-            if(balance > 0){
-              this.balance = balance;
-            }
-            else{
-              System.out.println("Initial balance must be greater than zero".)
-            }
+          public Account(double balance,String name, double id){
+            this.balance = balance>0 ? balance:0;
+            this.name = name;
+            this.id = is;
           }
 
           public double getBalance(){
             return balance;
+          }
+
+          public double accountHolder(){
+            return name;
+          }
+
+          public void setAccountHolderName(String name){
+            if(name != null && !name.trim().isEmpty()){
+              this.name = name;
+            }
+            else {
+              System.out.println("Invalid accountHolder name.")
+            }
           }
 
           public void deposite(double amount){
@@ -71,9 +83,12 @@ There are four main access modifiers.
           }
 
           public void withdraw(double amount){
-            if(amount > 0){
+            if(amount > 0 && this.balance > amount){
               balance -= amount;
               System.out.println("Withdrew: " + amount);
+            }
+            else if (amount > this.balance){
+              System.out.println("Insufficient Balance")
             }
             else{
               System.out.println("Amount should be greater then zero.")
