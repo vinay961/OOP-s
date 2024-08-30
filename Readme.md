@@ -181,6 +181,7 @@ To acheive this `extends` keyword is used.
         }
       }
       class Child extends Parent{
+        @Override
         void display(){
           System.out.println("This is Child class.");
         }
@@ -201,5 +202,7 @@ To acheive this `extends` keyword is used.
   ```
 
 `Upcasting` --> In the upcasting, we give reference of parent class to the child class, like in above code when we write `Parent obj = new Child()`, then we create object of child class but give the reference of parent class, so when child method is present in parent class, then only it get executed.That is why we got error when trying to execute the sample method.
+
+
 
 
