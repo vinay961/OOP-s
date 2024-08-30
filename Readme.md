@@ -203,6 +203,62 @@ To acheive this `extends` keyword is used.
 
 `Upcasting` --> In the upcasting, we give reference of parent class to the child class, like in above code when we write `Parent obj = new Child()`, then we create object of child class but give the reference of parent class, so when child method is present in parent class, then only it get executed.That is why we got error when trying to execute the sample method.
 
+## Abstraction
+The concept of hiding internal implementation details and showing only functionality to the users. This is typically achieved by abstract classes and interfaces.
+
+Using `abstract` keyword and interfaces.
+
+### Example:
+  ``` bash
+    ## Abstract example
+    abstract class Shape(){
+
+      abstract void draw(); // Abstract method
+      void info(){
+        System.out.println("This is shape.");
+      }
+
+    }
+
+    class Circle extends Shape{
+      void draw(){
+        System.out.println("Drawing a Circle.")
+      }
+    }
+
+    public class Main(){
+      public static void main(String[] args){
+        Shape shape = new Circle();
+        shape.info(); // This is shape.
+        shape.draw(); // Drawing a Circle.
+      }
+    }
+  ```
+
+### Example:
+ ``` bash
+     ## Interface Example
+    class Animal{
+      void sound();
+    }
+
+    class Cat implements Animal{
+      @Override
+      public void sound(){
+        System.out.println("Meow");
+      }
+    }
+
+    pulic class main{
+      public static void main(String[] args){
+        Animal cat = new Cat();
+        cat.sound(); // output: Meow
+      }
+    }
+  ```
+
+Now question is that what is difference between interface and abstract??
+
 
 
 
