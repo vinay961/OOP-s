@@ -51,7 +51,6 @@ class Student {
 public class S {
     public static void main(String[] args) {
         Student student = new Student("Alice", 101, 85);
-
         System.out.println("Initial Student Details:");
         System.out.println("Name: " + student.getName());
         System.out.println("Roll Number: " + student.getRollNumber());

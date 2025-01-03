@@ -21,7 +21,7 @@ class Cat extends Animal{
 
 public class info {
     public static void main(String[] args){
-        Animal cat = new Cat();
+        Cat cat = new Cat();
         cat.sample();
         cat.infor();
     }
