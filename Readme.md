@@ -269,6 +269,7 @@ not multiple abstract class and other thing is that wheather we need partial abs
 
 ## Static variable and Static Methods
 Static variable is a type of variable that belongs to the class and shared among instances.
+Static methods cann't be override, But can be overloaded.
 
 ### Example of Static variable
  ``` bash
@@ -321,7 +322,32 @@ Static variable is a type of variable that belongs to the class and shared among
     }
  ```
 
+## This keyword in Java
+this keyword in java refers to the current instance of class, it is used to refer the instance variable and methods.It helps distinguish between instance variables and local variables (or parameters) that have the same name.
 
+Static methods do not belong to a specific instance of the class, but to the class itself. Therefore, this cannot be used inside static methods.
+
+### Example
+ ``` bash
+     class Example{
+      static void staticMethod(){
+        this.name = name; // compilation error, beacuse static variable belongs to class not instance.
+      }
+     }
+     public class Main{
+      public static void main(String[]args){
+        Example.staticMethod();
+      }
+     }
+ ```
+
+## Final Keyword
+The final keyword in Java is used to apply restrictions on variables, methods, and classes. Once something is declared as final, it cannot be changed or overridden.
+
+1. When a variable is declared as final, it can only be assigned once. After initialization, its value     cannot be changed.
+2. When a method is declared final, it cannot be overridden by subclasses.
+3. When a class is declared final, it cannot be subclassed (inherited). This means you cannot extend a final class, and no subclass can inherit its methods and variables.
+4. You can also declare method parameters as final. This means that the value of the parameter cannot be changed inside the method.
 
 
 
