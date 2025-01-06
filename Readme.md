@@ -257,7 +257,70 @@ Using `abstract` keyword and interfaces.
     }
   ```
 
-Now question is that what is difference between interface and abstract??
+1.Now question is that what is difference between interface and abstract??
+All the methods in interface is abstract, means methods without implementation.
+All methods are implemented by their subclasses. Interfaces are complete abstraction.
+Now if we talk about abstract than methods inside it can be concreate or abstract.
+
+2.When to use Interface and when to use abstract?
+It depends on different context like inheritence where a class can implements multiple interfaces but
+not multiple abstract class and other thing is that wheather we need partial abstraction or complete abstraction.
+
+
+## Static variable and Static Methods
+Static variable is a type of variable that belongs to the class and shared among instances.
+
+### Example of Static variable
+ ``` bash
+    class Counter {
+        static int count = 0; // Static variable shared across instances
+
+        Counter() {
+            count++; // Increment count whenever a new instance is created
+        }
+
+        void displayCount() {
+            System.out.println("Count: " + count);
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Counter c1 = new Counter(); // count = 1
+            Counter c2 = new Counter(); // count = 2
+            Counter c3 = new Counter(); // count = 3
+
+            c1.displayCount(); // Output: Count: 3
+            c2.displayCount(); // Output: Count: 3
+            c3.displayCount(); // Output: Count: 3
+        }
+    }
+ ```
+
+### Example of Static method
+ ``` bash
+    class Calculator {
+        static int add(int a, int b) { // Static method
+            return a + b;
+        }
+
+        static int subtract(int a, int b) { // Static method
+            return a - b;
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            // Calling static methods using the class name
+            int sum = Calculator.add(10, 20);
+            int difference = Calculator.subtract(30, 15);
+
+            System.out.println("Sum: " + sum);         // Output: Sum: 30
+            System.out.println("Difference: " + difference); // Output: Difference: 15
+        }
+    }
+ ```
+
 
 
 
